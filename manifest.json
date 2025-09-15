@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Optimizer",
+  "description": "Optimize prompts for LLMs on Gemini and ChatGPT using your own API key.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Prompt Optimizer"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.anthropic.com/*",
+  "https://openrouter.ai/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["scripts/content.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  }
+}

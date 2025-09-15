@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Prompt Optimizer – Options</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../styles/content.css">
+</head>
+<body>
+  <div class="po-opt-wrap">
+    <h1 class="po-opt-h1">Prompt Optimizer – Options</h1>
+    <p class="po-opt-sub">Configure provider, API key and (optional) master prompt. Keys live only in <code>chrome.storage.sync</code> on this browser profile.</p>
+
+    <div class="po-opt-disclaimer" role="note" aria-label="Usage disclaimer">
+      <strong>Important:</strong> Using any API key is at your own risk. This project and its developers/owners assume no responsibility for any usage, costs, outputs, or consequences arising from the configured providers or generated content. Review provider terms and monitor your usage.
+    </div>
+
+    <div class="po-opt-panel">
+    <div class="po-opt-section">
+      <label for="provider" class="po-opt-label">Preferred Provider</label>
+      <select id="provider" class="po-opt-select">
+        <option value="openai">OpenAI (gpt-4o-mini)</option>
+        <option value="gemini">Gemini (2.5-flash)</option>
+        <option value="claude">Anthropic Claude (sonnet-3)</option>
+        <option value="openrouter">Openrouter (gpt-oss-120b:free)</option>
+      </select>
+    </div>
+
+    <div class="po-opt-section">
+      <label for="masterPrompt" class="po-opt-label">Master Prompt <span class="po-opt-optional">(optional)</span></label>
+      <textarea id="masterPrompt" rows="4" class="po-opt-textarea" placeholder="e.g. You are a world-class prompt engineer... Focus only on rewriting for clarity."></textarea>
+      <div class="po-opt-hint">If blank a hardened default prompt is used.</div>
+    </div>
+
+    <div id="apiKeyRow-openai" class="po-opt-section" style="display:none;">
+      <label for="openaiKey" class="po-opt-label">OpenAI API Key</label>
+      <input id="openaiKey" type="password" class="po-opt-input" placeholder="sk-..." />
+      <div class="po-opt-hint">Stored only locally (sync). Never sent to page context.</div>
+    </div>
+
+    <div id="apiKeyRow-gemini" class="po-opt-section" style="display:none;">
+      <label for="geminiKey" class="po-opt-label">Gemini API Key</label>
+      <input id="geminiKey" type="password" class="po-opt-input" placeholder="AIza..." />
+    </div>
+
+    <div id="apiKeyRow-claude" class="po-opt-section" style="display:none;">
+      <label for="claudeKey" class="po-opt-label">Claude API Key</label>
+      <input id="claudeKey" type="password" class="po-opt-input" placeholder="sk-ant-..." />
+    </div>
+
+    <div id="apiKeyRow-openrouter" class="po-opt-section" style="display:none;">
+      <label for="openrouterKey" class="po-opt-label">Openrouter API Key</label>
+      <input id="openrouterKey" type="password" class="po-opt-input" placeholder="or-..." />
+    </div>
+
+    <div class="po-opt-actions">
+      <button id="save" class="po-primary po-opt-save" type="button">Save Settings</button>
+      <span id="status" class="po-opt-status" aria-live="polite"></span>
+    </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
