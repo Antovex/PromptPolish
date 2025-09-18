@@ -203,7 +203,7 @@
       <option value="openai">OpenAI (gpt-4o-mini)</option>
       <option value="gemini">Gemini (2.5-flash)</option>
       <option value="claude">Anthropic Claude (sonnet-3)</option>
-      <option value="openrouter">Openrouter (gpt-oss-120b:free)</option>
+      <option value="openrouter">Openrouter (deepseek-chat-v3.1:free)</option>
     `;
     providerRow.appendChild(providerLabel);
     providerRow.appendChild(providerSelect);

@@ -94,7 +94,7 @@ async function callOpenrouter(apiKey, prompt) {
   // Openrouter API (2025)
   const url = 'https://openrouter.ai/api/v1/chat/completions';
   const body = {
-    model: 'openai/gpt-oss-120b:free',
+    model: 'deepseek/deepseek-chat-v3.1:free',
     messages: [
       { role: 'user', content: prompt }
     ],

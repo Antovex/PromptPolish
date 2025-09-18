@@ -30,7 +30,7 @@ Prompt Optimizer streamlines prompt engineering while you work. It supports mult
 	- OpenAI (`gpt-4o-mini` by default in code)
 	- Gemini (`gemini-2.5-flash` configured)
 	- Anthropic Claude (`claude-3-sonnet-20240229` configured)
-	- OpenRouter (defaults can be changed; current route set to `openai/gpt-oss-120b:free`)
+	- OpenRouter (defaults can be changed; current route set to `deepseek/deepseek-chat-v3.1:free`)
 - Keys are stored via `chrome.storage.sync` and used only by the background service worker.
 - Optional master prompt can be set in Options; a secure default is used otherwise.
 
